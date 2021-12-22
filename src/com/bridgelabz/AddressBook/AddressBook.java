@@ -206,7 +206,7 @@ public class AddressBook {
         for (int i = 0; i <list.size(); i++) {
             AddressBook.display(list.get(i));
             System.out.println();
+            
         }
     }
-}
 }
