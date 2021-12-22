@@ -6,7 +6,7 @@ import java.util.Scanner;
 class personalDetails{
     private String FirstName,LastName,Address,City,State,Email;
     long Zip,PhoneNumber;
-    
+
     public personalDetails(String FirstName,String LastName,String Address,String City,String State,String Email,long Zip,long PhoneNumber){
         this.FirstName=FirstName;
         this.LastName=LastName;
@@ -124,10 +124,19 @@ public class AddressBook {
 
 
     public static void main(String[] args) {
-
-        personalDetails personalDetails = addPerson();
-        list.add(personalDetails);
-        for (int i = 0; i < list.size(); i++) {
+        personalDetails personalDetail1 = addPerson();
+        boolean isAdd=true;
+        while(isAdd){
+            personalDetails personDetail1=AddressBook.addPerson();
+            list.add(personalDetail1);
+            System.out.println("If you Want to add other person Then Enter 1 or 0");
+            int num=Sc.nextInt();
+            if(num==1)
+                isAdd=true;
+            else
+                isAdd=false;
+        }
+        for (int i=0;i<list.size();i++){
             AddressBook.display(list.get(i));
         }
     }
